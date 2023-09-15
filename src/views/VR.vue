@@ -1,5 +1,5 @@
 <template>
-	<div class="container" ref="container">3</div>
+	<div class="container" ref="container"></div>
 </template>
 
 <script setup>
@@ -27,7 +27,7 @@
   let arr = ['scene_left', 'scene_right', 'scene_top', 'scene_bottom', 'scene_front', 'scene_back'];
   let boxMaterials = []
   arr.forEach(item => {
-    const texttrue = new THREE.TextureLoader().load(require(`../assets/img/scene_bottom.jpeg`)) // 纹理贴纸
+    const texttrue = new THREE.TextureLoader().load(new URL(`../assets/img/${item}.jpeg`, import.meta.url).href) // 纹理贴纸
     // if ( item === 'scene_top' || item === 'scene_bottom' ) {
     //   texttrue.rotation = Math.PI;
     //   texttrue.center = new THREE.Vector2(0.5,0.5) // 旋转中心
